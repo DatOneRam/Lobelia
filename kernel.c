@@ -93,7 +93,14 @@ void terminal_putchar(char c)
 	}
 }
 
-void terminal terminal_write(const char* data, size_t size)
+void terminal terminal_write(const char* data)
 {
-	for (size
+	for (size_t i = 0; i < strlen(data); i++)
+		terminal_putchar(data[i]);
 }	
+
+void kernel_main(void)
+{
+	terminal_initialize();
+	terminal_writestring("Lobelia who?");
+}
